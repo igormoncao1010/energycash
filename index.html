@@ -10,12 +10,13 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="simulation.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 </head>
 <body>
   <header class="nav">
     <a class="brand" href="#inicio" aria-label="EnergyCash, início"><span class="brand-mark">ϟ</span><span>Energy<span>Cash</span></span></a>
     <nav aria-label="Navegação principal">
-      <a href="#como-funciona">Como funciona</a><a href="#impacto">Impacto</a><a href="#conformidade">Conformidade</a>
+      <a href="#como-funciona">Como funciona</a><a href="#mapa-df">Mapa DF</a><a href="#impacto">Impacto</a><a href="#conformidade">Conformidade</a>
     </nav>
     <a class="button button-small" href="#simulador">Simular impacto</a>
   </header>
@@ -46,6 +47,7 @@
 
     <section class="driver-credit" id="credito-motorista">
       <div class="driver-copy"><p class="eyebrow">PROGRAMA PROJETADO PARA O MOTORISTA</p><h2>36 recargas completas.<br><span>1 crédito acumulado.</span></h2><p>Para um veículo de referência com bateria de 60 kWh, o projeto prevê que, a cada 36 recargas completas elegíveis, o motorista acumule um crédito interno referenciado a 1 CBIO.</p><div class="driver-flow"><span>36 recargas</span><b>→</b><span>validação</span><b>→</b><span>1 crédito</span><b>→</b><span>saldo em reais</span></div></div>
+      <figure class="driver-photo"><img src="assets/driver-rewards.png" alt="Motorista acompanha a recarga de um veículo elétrico pelo celular em Brasília"></figure>
       <aside class="wallet-card"><p>CARTEIRA ENERGYCASH</p><small>Saldo projetado por ciclo</small><strong>R$ 23,75</strong><div class="wallet-progress"><i></i></div><span>36 de 36 recargas</span><button type="button" disabled>Venda após certificação</button><small class="wallet-legal">Conversão e negociação condicionadas à certificação, disponibilidade de comprador e regras da plataforma.</small></aside>
     </section>
 
@@ -57,6 +59,16 @@
         <article><b>03</b><span class="icon">CO₂</span><h3>Cálculo</h3><p>Estimamos a emissão fóssil substituída.</p></article>
         <article><b>04</b><span class="icon">✓</span><h3>Validação</h3><p>O impacto segue para auditoria e certificação.</p></article>
       </div>
+      <figure class="section-image"><img src="assets/charging-data.png" alt="Conector de recarga e monitoramento digital de energia"><figcaption>Da energia entregue à mensuração do impacto: cada sessão deixa uma trilha de dados verificável.</figcaption></figure>
+    </section>
+
+    <section class="map-section" id="mapa-df">
+      <div class="map-copy"><p class="eyebrow light">REDE DE RECARGA DO DISTRITO FEDERAL</p><h2>Encontre onde carregar.</h2><p>Visualize os eletropostos cadastrados no OpenStreetMap dentro do DF. Filtre por cobrança informada e pontos identificados como operados pelo poder público.</p>
+        <div class="map-filters" role="group" aria-label="Filtrar eletropostos"><button class="active" data-filter="all">Todos <b id="countAll">—</b></button><button data-filter="free">Grátis <b id="countFree">—</b></button><button data-filter="paid">Pagos <b id="countPaid">—</b></button><button data-filter="gdf">GDF <b id="countGdf">—</b></button></div>
+        <div class="map-actions"><button type="button" id="resetMap">⌖ Centralizar DF</button><span>Arraste, aproxime e toque nos pontos</span></div>
+        <p class="map-status" id="mapStatus">Carregando pontos públicos…</p><small>Base colaborativa OpenStreetMap. A disponibilidade, tarifa e operação devem ser confirmadas antes do deslocamento.</small>
+      </div>
+      <div class="map-shell"><div id="chargingMap" role="application" tabindex="0" aria-label="Mapa interativo de eletropostos no Distrito Federal"></div><div class="map-legend"><span><i class="dot free"></i> grátis</span><span><i class="dot paid"></i> pago</span><span><i class="dot gdf"></i> GDF</span><span><i class="dot unknown"></i> não informado</span></div></div>
     </section>
 
     <section class="calculator-wrap" id="simulador">
@@ -96,6 +108,7 @@
   </main>
 
   <footer><a class="brand" href="#inicio"><span class="brand-mark">ϟ</span><span>Energy<span>Cash</span></span></a><p>Energia que move. <strong>Valor que fica.</strong></p><a href="mailto:contato@energycash.com.br">contato@energycash.com.br</a></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="script.js"></script>
 </body>
 </html>
