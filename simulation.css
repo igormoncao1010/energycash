@@ -1,0 +1,55 @@
+.result-grid{grid-template-columns:repeat(3,1fr)}
+.result-grid strong{font-size:27px}
+.scale-table{margin-top:45px;overflow-x:auto;border:1px solid var(--line);border-radius:22px}
+.scale-table table{width:100%;min-width:760px;border-collapse:collapse;background:#fff}
+.scale-table th,.scale-table td{padding:17px 22px;text-align:left;border-bottom:1px solid var(--line)}
+.scale-table th{background:#edf5e8;font:700 13px Manrope;text-transform:uppercase;color:#3a604b}
+.scale-table tbody tr:last-child td{border:0}.scale-table td:first-child{font-weight:800;color:var(--green)}
+.scale-table p{padding:0 22px;color:#708078;font-size:12px}
+.network-case{padding:100px 6vw;background:linear-gradient(135deg,#073a26,#041f17);color:#fff;display:grid;grid-template-columns:.8fr 1.2fr;gap:7vw;align-items:center}
+.network-case h2{font:800 clamp(38px,4.5vw,60px)/1.02 Manrope;margin:0}
+.network-title>p:not(.eyebrow){color:#b8c9c0}.network-numbers{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.network-numbers article{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:25px;border-radius:18px}
+.network-numbers small{display:block;color:#a9beb4}.network-numbers strong{display:block;font:800 clamp(28px,3vw,43px) Manrope;color:#a6dc4e}
+.network-numbers .money{background:#7db430}.network-numbers .money small,.network-numbers .money strong{color:#082d20}
+.network-note{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);padding-top:24px;color:#a9bdb3;font-size:13px}
+@media(max-width:900px){.network-case{grid-template-columns:1fr}}
+@media(max-width:560px){.network-case{padding:75px 22px}.result-grid,.network-numbers{grid-template-columns:1fr}}
+
+/* Hero uses the supplied charging-car artwork, cropped to its photographic half. */
+.hero-visual{background-image:url('assets/energycash-charger-clean-v2.png');background-size:cover;background-position:center 48%;background-repeat:no-repeat;background-color:#dfe8da}
+.hero-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,45,32,.22),transparent 38%);border-radius:inherit;pointer-events:none}
+@media(max-width:900px){.hero-visual{background-size:cover;background-position:center 45%}}
+@media(max-width:560px){.hero-visual{background-size:cover;background-position:center 42%}}
+
+.market-ticker{position:sticky;top:84px;z-index:9;overflow:hidden;background:#092f22;color:#fff;border-bottom:1px solid rgba(255,255,255,.12);height:32px;display:flex;align-items:center}
+.ticker-track{display:flex;align-items:center;gap:55px;min-width:max-content;animation:ticker 30s linear infinite;font-size:12px;letter-spacing:.03em}
+.ticker-track span{white-space:nowrap}.ticker-track b{color:#9ed94c;margin-right:7px}.ticker-track em{font-style:normal;color:#89a398;margin-left:6px}.ticker-track i{font-style:normal}
+@keyframes ticker{to{transform:translateX(-50%)}}
+.driver-credit{padding:100px 6vw;display:grid;grid-template-columns:1.2fr .8fr;gap:8vw;align-items:center;background:#fff}
+.driver-credit h2{font:800 clamp(38px,4.6vw,62px)/1.02 Manrope;margin:0;letter-spacing:-.04em}.driver-credit h2 span{color:var(--green)}.driver-copy>p:not(.eyebrow){max-width:690px;font-size:19px;color:#526a60}
+.driver-flow{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:32px}.driver-flow span{padding:10px 15px;border-radius:999px;background:#edf5e8;font-weight:700}.driver-flow b{color:var(--lime)}
+.wallet-card{background:linear-gradient(145deg,#0c472e,#05291e);color:#fff;border-radius:28px;padding:35px;box-shadow:0 24px 70px rgba(6,45,32,.22)}.wallet-card p{font:700 13px Manrope;letter-spacing:.12em;color:#9fd94c}.wallet-card small{display:block;color:#9fb2aa}.wallet-card>strong{display:block;font:800 49px Manrope;margin:5px 0 20px}.wallet-progress{height:8px;border-radius:99px;background:rgba(255,255,255,.15);overflow:hidden}.wallet-progress i{display:block;width:100%;height:100%;background:#9bd744}.wallet-card>span{display:block;text-align:right;font-size:12px;margin:7px 0 22px;color:#b9cbc3}.wallet-card button{width:100%;border:0;border-radius:12px;padding:14px;background:#83bd38;color:#092f22;font-weight:800}.wallet-card .wallet-legal{margin-top:14px;font-size:11px;line-height:1.45}
+@media(max-width:900px){.driver-credit{grid-template-columns:1fr}}
+@media(max-width:560px){.market-ticker{top:70px}.driver-credit{padding:75px 22px}.driver-flow b{display:none}.ticker-track{gap:32px}}
+
+/* Brasília imagery and scroll motion */
+.hero-visual{background-image:url('assets/hero-brasilia.png');background-position:center;background-size:cover}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.reveal.is-visible{opacity:1;transform:none}.steps article:nth-child(2),.metrics article:nth-child(2){transition-delay:.08s}.steps article:nth-child(3),.metrics article:nth-child(3){transition-delay:.16s}.steps article:nth-child(4){transition-delay:.24s}
+.driver-credit{grid-template-columns:1fr .72fr .7fr;gap:28px}.driver-photo{margin:0;height:440px;border-radius:26px;overflow:hidden;box-shadow:0 20px 50px rgba(6,45,32,.14)}.driver-photo img,.section-image img{width:100%;height:100%;object-fit:cover;display:block}.driver-photo img{object-position:65% center}.section-image{margin:55px 0 0;position:relative;height:390px;border-radius:28px;overflow:hidden}.section-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 45%,rgba(4,31,23,.82))}.section-image figcaption{position:absolute;z-index:1;right:5%;top:50%;transform:translateY(-50%);width:38%;color:#fff;font:700 clamp(20px,2.5vw,34px)/1.25 Manrope}
+.map-section{padding:100px 6vw;background:#082f22;color:#fff;display:grid;grid-template-columns:.7fr 1.3fr;gap:5vw;align-items:center}.map-section h2{font:800 clamp(40px,5vw,65px)/1 Manrope;margin:0}.map-copy>p:not(.eyebrow):not(.map-status){color:#b6c8bf;font-size:18px}.map-copy>small{display:block;color:#8fa79c;font-size:11px;line-height:1.45}.map-filters{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 18px}.map-filters button{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;padding:10px 14px;border-radius:999px;cursor:pointer;font-weight:700}.map-filters button.active,.map-filters button:hover{background:#88c33e;color:#082f22}.map-filters b{margin-left:5px}.map-status{font-weight:700;color:#a7dc58}.map-shell{background:#fff;padding:10px;border-radius:26px;box-shadow:0 25px 70px rgba(0,0,0,.28)}#chargingMap{height:590px;border-radius:18px;overflow:hidden}.map-legend{display:flex;flex-wrap:wrap;gap:18px;padding:12px 8px 4px;color:#405c50;font-size:12px}.map-legend span{display:flex;align-items:center;gap:6px}.dot{width:9px;height:9px;border-radius:50%;background:#83968e}.dot.free,.map-pin.free{background:#59a936}.dot.paid,.map-pin.paid{background:#e39a31}.dot.gdf,.map-pin.gdf{background:#1678b8}.map-pin{display:grid;place-items:center;width:34px;height:34px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#788b83;color:#fff;border:3px solid #fff;box-shadow:0 3px 12px rgba(0,0,0,.3);font-weight:800}.map-pin::first-letter{transform:rotate(45deg)}
+@media(max-width:1100px){.driver-credit{grid-template-columns:1fr 1fr}.driver-copy{grid-column:1/-1}.driver-photo{height:350px}}
+@media(max-width:900px){.map-section{grid-template-columns:1fr}#chargingMap{height:520px}.section-image{height:320px}.section-image figcaption{width:50%}}
+@media(max-width:560px){.driver-credit{grid-template-columns:1fr}.driver-copy{grid-column:auto}.driver-photo{height:300px}.section-image{height:390px}.section-image:after{background:linear-gradient(0deg,rgba(4,31,23,.88),transparent 65%)}.section-image figcaption{left:22px;right:22px;top:auto;bottom:24px;transform:none;width:auto}.map-section{padding:75px 22px}#chargingMap{height:460px}.map-filters button{font-size:12px}.reveal{transform:translateY(22px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.ticker-track{animation:none}}
+
+/* Full-bleed Brasília hero */
+.hero{position:relative;background:url('assets/hero-brasilia.png') center center/cover no-repeat;color:#fff;isolation:isolate}
+.hero::before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(3,28,20,.92) 0%,rgba(4,36,25,.78) 35%,rgba(4,36,25,.2) 63%,rgba(4,36,25,.05) 100%)}
+.hero-copy{position:relative;z-index:2}.hero .eyebrow{color:#a5df4e}.hero h1 span{color:#a5df4e}.hero .lead{color:#eef5f0}.hero .text-link{color:#fff}.hero .trust{color:#d5e2dc}.hero-visual{background:none!important}.hero-visual::before,.hero-visual::after{display:none}.hero .impact-card{color:var(--ink)}
+@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:760px;background-position:65% center}.hero::before{background:linear-gradient(90deg,rgba(3,28,20,.91),rgba(3,28,20,.58) 70%,rgba(3,28,20,.25))}.hero-visual{position:absolute;inset:0;min-height:0;pointer-events:none}.hero .impact-card{left:auto;right:24px;bottom:28px}}
+@media(max-width:560px){.hero{min-height:720px;background-position:68% center}.hero::before{background:linear-gradient(180deg,rgba(3,28,20,.88) 0%,rgba(3,28,20,.64) 62%,rgba(3,28,20,.26) 100%)}.hero-copy{padding-bottom:190px}.hero .impact-card{right:22px;left:22px;width:auto}}
+
+.map-actions{display:flex;align-items:center;gap:12px;margin-bottom:12px}.map-actions button{border:0;border-radius:10px;padding:10px 13px;background:#fff;color:#0b412c;font-weight:800;cursor:pointer}.map-actions button:hover{background:#a6dc58}.map-actions span{font-size:12px;color:#9eb4aa}#chargingMap iframe{width:100%;height:100%;border:0}.leaflet-container{cursor:grab}.leaflet-container:active{cursor:grabbing}.leaflet-popup-content strong{color:#0b412c}.leaflet-control-zoom a{color:#0b412c!important}
+@media(max-width:560px){.map-actions{align-items:flex-start;flex-direction:column}}

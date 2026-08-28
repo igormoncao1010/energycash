@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EnergyCash — transforme dados de recarga em impacto climático mensurável.">
+  <title>EnergyCash — Energia que move. Valor que fica.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="simulation.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#inicio" aria-label="EnergyCash, início"><span class="brand-mark">ϟ</span><span>Energy<span>Cash</span></span></a>
+    <nav aria-label="Navegação principal">
+      <a href="#como-funciona">Como funciona</a><a href="#mapa-df">Mapa DF</a><a href="#impacto">Impacto</a><a href="#conformidade">Conformidade</a>
+    </nav>
+    <a class="button button-small" href="#simulador">Simular impacto</a>
+  </header>
+  <div class="market-ticker" aria-label="Cotações e referências de mercado">
+    <div class="ticker-track">
+      <span><b>CBIO</b> R$ 23,75 <em>última média pública disponível</em></span><span><b>DÓLAR</b> <i id="usdQuote">R$ 5,16</i></span><span><b>OURO</b> <i id="goldQuote">R$ 759,96/g</i></span><span><b>CPR VERDE</b> sob consulta <em>preço por operação</em></span>
+      <span aria-hidden="true"><b>CBIO</b> R$ 23,75</span><span aria-hidden="true"><b>DÓLAR</b> <i>mercado</i></span><span aria-hidden="true"><b>OURO</b> <i>mercado</i></span><span aria-hidden="true"><b>CPR VERDE</b> sob consulta</span>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">MOBILIDADE ELÉTRICA + INTELIGÊNCIA CLIMÁTICA</p>
+        <h1>A recarga move o carro.<br><span>Os dados movem o futuro.</span></h1>
+        <p class="lead">A EnergyCash mede a energia consumida, estima emissões evitadas e cria uma trilha auditável para projetos de crédito de carbono.</p>
+        <div class="actions"><a class="button" href="#simulador">Calcular equivalência</a><a class="text-link" href="#como-funciona">Conhecer o modelo <span>→</span></a></div>
+        <div class="trust"><span>● Dados rastreáveis</span><span>● Metodologia transparente</span><span>● Pronto para escalar</span></div>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Estação EnergyCash com veículos elétricos em recarga">
+        <div class="impact-card"><span>Estimativa por ciclo de 400 km</span><strong>≈ 88 kg</strong><small>de CO₂ evitado</small></div>
+      </div>
+    </section>
+
+    <section class="statement">
+      <p>Uma infraestrutura que transforma <strong>recargas</strong> em dados, dados em <strong>impacto</strong> e impacto em valor.</p>
+    </section>
+
+    <section class="driver-credit" id="credito-motorista">
+      <div class="driver-copy"><p class="eyebrow">PROGRAMA PROJETADO PARA O MOTORISTA</p><h2>36 recargas completas.<br><span>1 crédito acumulado.</span></h2><p>Para um veículo de referência com bateria de 60 kWh, o projeto prevê que, a cada 36 recargas completas elegíveis, o motorista acumule um crédito interno referenciado a 1 CBIO.</p><div class="driver-flow"><span>36 recargas</span><b>→</b><span>validação</span><b>→</b><span>1 crédito</span><b>→</b><span>saldo em reais</span></div></div>
+      <figure class="driver-photo"><img src="assets/driver-rewards.png" alt="Motorista acompanha a recarga de um veículo elétrico pelo celular em Brasília"></figure>
+      <aside class="wallet-card"><p>CARTEIRA ENERGYCASH</p><small>Saldo projetado por ciclo</small><strong>R$ 23,75</strong><div class="wallet-progress"><i></i></div><span>36 de 36 recargas</span><button type="button" disabled>Venda após certificação</button><small class="wallet-legal">Conversão e negociação condicionadas à certificação, disponibilidade de comprador e regras da plataforma.</small></aside>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="section-head"><p class="eyebrow">DA TOMADA À TONELADA</p><h2>Impacto mensurável, etapa por etapa.</h2><p>Cada evento de recarga entra em uma cadeia transparente de medição e cálculo.</p></div>
+      <div class="steps">
+        <article><b>01</b><span class="icon">ϟ</span><h3>Recarga</h3><p>O eletroposto registra energia, horário e sessão.</p></article>
+        <article><b>02</b><span class="icon">⌁</span><h3>Mensuração</h3><p>Os dados são consolidados com rastreabilidade.</p></article>
+        <article><b>03</b><span class="icon">CO₂</span><h3>Cálculo</h3><p>Estimamos a emissão fóssil substituída.</p></article>
+        <article><b>04</b><span class="icon">✓</span><h3>Validação</h3><p>O impacto segue para auditoria e certificação.</p></article>
+      </div>
+      <figure class="section-image"><img src="assets/charging-data.png" alt="Conector de recarga e monitoramento digital de energia"><figcaption>Da energia entregue à mensuração do impacto: cada sessão deixa uma trilha de dados verificável.</figcaption></figure>
+    </section>
+
+    <section class="map-section" id="mapa-df">
+      <div class="map-copy"><p class="eyebrow light">REDE DE RECARGA DO DISTRITO FEDERAL</p><h2>Encontre onde carregar.</h2><p>Visualize os eletropostos cadastrados no OpenStreetMap dentro do DF. Filtre por cobrança informada e pontos identificados como operados pelo poder público.</p>
+        <div class="map-filters" role="group" aria-label="Filtrar eletropostos"><button class="active" data-filter="all">Todos <b id="countAll">—</b></button><button data-filter="free">Grátis <b id="countFree">—</b></button><button data-filter="paid">Pagos <b id="countPaid">—</b></button><button data-filter="gdf">GDF <b id="countGdf">—</b></button></div>
+        <div class="map-actions"><button type="button" id="resetMap">⌖ Centralizar DF</button><span>Arraste, aproxime e toque nos pontos</span></div>
+        <p class="map-status" id="mapStatus">Carregando pontos públicos…</p><small>Base colaborativa OpenStreetMap. A disponibilidade, tarifa e operação devem ser confirmadas antes do deslocamento.</small>
+      </div>
+      <div class="map-shell"><div id="chargingMap" role="application" tabindex="0" aria-label="Mapa interativo de eletropostos no Distrito Federal"></div><div class="map-legend"><span><i class="dot free"></i> grátis</span><span><i class="dot paid"></i> pago</span><span><i class="dot gdf"></i> GDF</span><span><i class="dot unknown"></i> não informado</span></div></div>
+    </section>
+
+    <section class="calculator-wrap" id="simulador">
+      <div class="calculator-copy">
+        <p class="eyebrow light">SIMULE O IMPACTO</p><h2>Quantas recargas equivalem a uma tonelada?</h2>
+        <p>Use a estimativa-base de um elétrico com bateria de 60 kWh e autonomia próxima de 400 km.</p>
+        <div class="formula"><span>1.000 kg CO₂</span><i>÷</i><span>88 kg evitados</span><i>=</i><strong>11,4 cargas</strong></div>
+      </div>
+      <form class="calculator" onsubmit="return false">
+        <label for="charges">Recargas completas <output id="chargeOutput">1.000</output></label>
+        <input id="charges" type="range" min="100" max="10000" step="100" value="1000">
+        <div class="result-grid"><div><small>CO₂ evitado</small><strong id="co2Result">88 t</strong></div><div><small>Créditos projetados (36 cargas)</small><strong id="creditResult">27</strong></div><div><small>Saldo indicativo</small><strong id="valueResult">R$ 641</strong></div></div>
+        <p class="note">O saldo considera apenas ciclos completos de 36 recargas. Crédito interno referenciado; não representa emissão automática de CBIO regulado.</p>
+      </form>
+    </section>
+
+    <section class="section impact" id="impacto">
+      <div class="section-head"><p class="eyebrow">ESCALA QUE TRANSFORMA</p><h2>Uma rede, três cenários.</h2></div>
+      <div class="metrics"><article><span>100</span><h3>recargas</h3><p>≈ 8,8 tCO₂ evitadas</p></article><article class="featured"><span>1.000</span><h3>recargas</h3><p>≈ 88 tCO₂ evitadas</p></article><article><span>10.000</span><h3>recargas</h3><p>≈ 880 tCO₂ evitadas</p></article></div>
+      <div class="scale-table" role="region" aria-label="Tabela de equivalências" tabindex="0">
+        <table><thead><tr><th>Recargas</th><th>km elétricos</th><th>CO₂ evitado</th><th>CBIO-equivalente*</th><th>Valor indicativo**</th></tr></thead><tbody>
+          <tr><td>12</td><td>4.800 km</td><td>1,06 t</td><td>≈ 1</td><td>≈ R$ 25</td></tr><tr><td>100</td><td>40.000 km</td><td>8,8 t</td><td>≈ 8,8</td><td>≈ R$ 209</td></tr><tr><td>1.000</td><td>400.000 km</td><td>88 t</td><td>≈ 88</td><td>≈ R$ 2.090</td></tr><tr><td>10.000</td><td>4 milhões km</td><td>880 t</td><td>≈ 880</td><td>≈ R$ 20.900</td></tr><tr><td>100.000</td><td>40 milhões km</td><td>8.800 t</td><td>≈ 8.800</td><td>≈ R$ 209 mil</td></tr><tr><td>1 milhão</td><td>400 milhões km</td><td>88.000 t</td><td>≈ 88.000</td><td>≈ R$ 2,09 milhões</td></tr>
+        </tbody></table><p>* Equivalência ambiental, não emissão legal de CBIO. ** Simulação a R$ 23,75 por unidade equivalente.</p>
+      </div>
+    </section>
+
+    <section class="network-case">
+      <div class="network-title"><p class="eyebrow light">CENÁRIO DE REDE NACIONAL</p><h2>1.000 eletropostos.<br>20 recargas por dia.</h2><p>Uma visão preliminar da escala operacional e ambiental possível.</p></div>
+      <div class="network-numbers"><article><small>Recargas por dia</small><strong>20.000</strong></article><article><small>CO₂ evitado por dia</small><strong>1.760 t</strong></article><article><small>CO₂ evitado por ano</small><strong>642.400 t</strong></article><article class="money"><small>Valor indicativo anual**</small><strong>R$ 15,26 mi</strong></article></div>
+      <p class="network-note">A projeção não representa receita garantida nem CBIOs disponíveis para negociação. Um projeto comercial exigiria metodologia reconhecida, validação independente, adicionalidade, rastreabilidade e prevenção de dupla contagem.</p>
+    </section>
+
+    <section class="compliance" id="conformidade">
+      <div><p class="eyebrow">TRANSPARÊNCIA REGULATÓRIA</p><h2>Equivalência ambiental não é emissão de CBIO.</h2></div>
+      <div><p>Um CBIO representa uma tonelada de CO₂ equivalente evitada, mas sua emissão primária no RenovaBio está vinculada a produtores e importadores certificados de biocombustíveis.</p><p>Para eletropostos, o caminho comercial a estudar é o mercado voluntário ou outra metodologia reconhecida. Isso exige medir kWh consumidos, perdas, veículo, distância equivalente, matriz elétrica, baseline fóssil e evitar dupla contagem.</p></div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#inicio"><span class="brand-mark">ϟ</span><span>Energy<span>Cash</span></span></a><p>Energia que move. <strong>Valor que fica.</strong></p><a href="mailto:contato@energycash.com.br">contato@energycash.com.br</a></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>
